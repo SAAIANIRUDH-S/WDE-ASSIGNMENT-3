@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Commerce Portal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f0f8ff;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
+    }
+    section {
+      padding: 20px;
+      background: white;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #007bff;
+    }
+    input, textarea, button {
+      padding: 8px;
+      margin: 5px 0;
+      width: 100%;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    ul {
+      list-style-type: square;
+      color: #333;
+    }
+  </style>
+  <script>
+    function validateRegistration() {
+      let name = document.getElementById("regName").value;
+      let email = document.getElementById("regEmail").value;
+      let password = document.getElementById("regPassword").value;
+      let phone = document.getElementById("regPhone").value;
+      if (name === "" || email === "" || password === "" || phone === "") {
+        alert("All fields are required.");
+        return false;
+      }
+      if (!email.includes("@")) {
+        alert("Enter a valid email.");
+        return false;
+      }
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters.");
+        return false;
+      }
+      if (isNaN(phone)) {
+        alert("Phone number must contain only digits.");
+        return false;
+      }
+      alert("Registration Successful!");
+      return true;
+    }
+
+    function validateLogin() {
+      let email = document.getElementById("loginEmail").value;
+      let password = document.getElementById("loginPassword").value;
+      if (email === "" || password === "") {
+        alert("Email and Password required.");
+        return false;
+      }
+      alert("Login Successful!");
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🌟 My E-Commerce Portal 🌟</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+  </header>
+
+  <section id="home">
+    <h2>Welcome to My E-Commerce Portal</h2>
+    <p>Shop your favorite products at amazing prices! Simple, colorful, and user-friendly.</p>
+  </section>
+
+  <section id="products">
+    <h2>Our Products</h2>
+    <ul>
+      <li>📱 Smartphone - ₹12,999</li>
+      <li>💻 Laptop - ₹45,000</li>
+      <li>🎧 Headphones - ₹1,499</li>
+      <li>⌚ Watch - ₹2,999</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>User Registration</h2>
+    <form onsubmit="return validateRegistration()">
+      <input type="text" id="regName" placeholder="Full Name"><br>
+      <input type="email" id="regEmail" placeholder="Email"><br>
+      <input type="password" id="regPassword" placeholder="Password"><br>
+      <input type="text" id="regPhone" placeholder="Phone Number"><br>
+      <button type="submit">Register</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>User Login</h2>
+    <form onsubmit="return validateLogin()">
+      <input type="email" id="loginEmail" placeholder="Email"><br>
+      <input type="password" id="loginPassword" placeholder="Password"><br>
+      <button type="submit">Login</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>Orders List</h2>
+    <ul>
+      <li>Order #1: Smartphone - ✅ Delivered</li>
+      <li>Order #2: Laptop - 🚚 Shipped</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Wishlist</h2>
+    <ul>
+      <li>⌚ Smartwatch</li>
+      <li>🔊 Bluetooth Speaker</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Comments & Reviews</h2>
+    <textarea placeholder="Write your review..."></textarea><br>
+    <button>Submit Review</button>
+  </section>
+
+  <section>
+    <h2>Customer Care</h2>
+    <p>📩 Email: support@ecommerce.com</p>
+    <p>📞 Phone: +91 98765 43210</p>
+  </section>
+
+  <section>
+    <h2>Report an Issue</h2>
+    <textarea placeholder="Describe your issue..."></textarea><br>
+    <button>Submit Report</button>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>We are a student team learning web development by building this basic E-Commerce website.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📧 Email: contact@ecommerce.com</p>
+    <p>📍 Address: Chennai, India</p>
+  </section>
+</body>
+</html>
